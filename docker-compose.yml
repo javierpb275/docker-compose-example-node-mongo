@@ -8,8 +8,12 @@ services:
       - "5000:3000"
     links:
       - mongo
+    volumes:
+      - .:/usr/src/app
   mongo:
     container_name: mymongodatabase
     image: mongo
     ports:
       - "27018:27017"
+    logging:
+      driver: none
